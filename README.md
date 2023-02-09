@@ -1,6 +1,6 @@
 # Logic Gates
 
-Trying to simulate logic gates in rust programming language.\
+Trying to simulate logic gates in rust programming language.
 
 ## Todo:
 
