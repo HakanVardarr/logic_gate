@@ -5,7 +5,7 @@ Trying to simulate logic gates in rust programming language.\
 ## Todo:
 
 - 4 bit adder (completed)
-- Change the project to a rust lib (uncompleted)
+- Change the project to a rust lib (completed)
 - Negative number support (uncompleted)
 - 8 bit (uncompleted)
 - 8 bit adder (uncompleted)
