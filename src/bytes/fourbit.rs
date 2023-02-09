@@ -32,6 +32,14 @@ impl FourBit {
 #[derive(Debug)]
 pub struct ParseFourBitError;
 
+impl std::fmt::Display for ParseFourBitError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ERROR: Cannot parse given string to a Four Bit")
+    }
+}
+
+impl std::error::Error for ParseFourBitError {}
+
 impl FromStr for FourBit {
     type Err = ParseFourBitError;
 

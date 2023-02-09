@@ -10,7 +10,6 @@ Trying to simulate logic gates in rust programming language.\
 - 8 bit (uncompleted)
 - 8 bit adder (uncompleted)
 
-
 ## Usage:
 
 You need to import theese if you want to use the features.
@@ -30,14 +29,17 @@ fn main() -> Result<(), Box<dyn std::error::Error> {
   let byte1: FourBit = "0100".parse()?;
   let byte2: FourBit = "0010".parse()?;
   let carry = Signal::Zero;
-  
+
+
   let (sum, car) = FourBitAdder::send_signal(&carry, &bits1, &bits2);
-  
+
+
   Ok(())
 }
 ```
 
-In this example you can add two four bytes together. You need to send carry signal as ```Signal::Zero``` carry signal is usefull if you want to implement 8bit adder.
+
+In this example you can add two four bytes together. You need to send carry signal as `Signal::Zero` carry signal is usefull if you want to implement 8bit adder.
 
 If you want to display the added four bit you can implement a display function like this.
 
@@ -86,6 +88,7 @@ fn display(bits1: &FourBit, bits2: &FourBit, sum: &FourBit, car: &Signal) {
 ```
 
 If you use this function to display. You will get a result like this.
+
 ```rust
 
 |---------------------|
@@ -98,5 +101,3 @@ If you use this function to display. You will get a result like this.
 ```
 
 Extra fifth bit is carry bit it is not a necessary bit do display we are working with 4 bits not with 5 bits. But carry bit is usefull in the future when I develop 8BitAdder.
-
-
