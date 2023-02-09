@@ -1,7 +1,7 @@
 use super::Signal;
 use std::str::FromStr;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct FourBit {
     pub bit1: Signal,
     pub bit2: Signal,

@@ -1,5 +1,7 @@
-pub mod gates;
 pub mod bytes;
+pub mod gates;
+#[cfg(test)]
+mod tests;
 
 use std::fmt;
 #[derive(PartialEq, Copy, Clone, Debug)]
