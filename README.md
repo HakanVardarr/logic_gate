@@ -46,9 +46,9 @@ If you want to display the added four bit you can implement a display function l
 ```rust
 
 fn display(bits1: &FourBit, bits2: &FourBit, sum: &FourBit, car: &Signal) {
-    println!("|---------------------|");
+    println!("|----------------------|");
     println!(
-        "| Input 1 : {}{}{}{}  = {} |",
+        "| Input 1 : {}{}{}{}  = {}  |",
         bits1.bit1,
         bits1.bit2,
         bits1.bit3,
@@ -56,17 +56,17 @@ fn display(bits1: &FourBit, bits2: &FourBit, sum: &FourBit, car: &Signal) {
         bits1.convert()
     );
     println!(
-        "| Input 2 : {}{}{}{}  = {} |",
+        "| Input 2 : {}{}{}{}  = {}  |",
         bits2.bit1,
         bits2.bit2,
         bits2.bit3,
         bits2.bit4,
         bits2.convert()
     );
-    println!("|---------------------|");
+    println!("|----------------------|");
     if car == &Signal::One {
         println!(
-            "| Output  : {car}{}{}{}{} = {} |",
+            "| Output  : {car}{}{}{}{} = {}  |",
             sum.bit1,
             sum.bit2,
             sum.bit3,
@@ -83,8 +83,9 @@ fn display(bits1: &FourBit, bits2: &FourBit, sum: &FourBit, car: &Signal) {
             sum.convert()
         );
     }
-    println!("|---------------------|");
+    println!("|----------------------|");
 }
+
 ```
 
 If you use this function to display. You will get a result like this.
