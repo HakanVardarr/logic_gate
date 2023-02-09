@@ -30,11 +30,14 @@ fn main() -> Result<(), Box<dyn std::error::Error> {
   let byte2: FourBit = "0010".parse()?;
   let carry = Signal::Zero;
 
+
   let (sum, car) = FourBitAdder::send_signal(&carry, &bits1, &bits2);
+
 
   Ok(())
 }
 ```
+
 
 In this example you can add two four bytes together. You need to send carry signal as `Signal::Zero` carry signal is usefull if you want to implement 8bit adder.
 
