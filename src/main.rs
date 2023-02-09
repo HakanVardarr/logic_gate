@@ -3,12 +3,12 @@ use logic_gates::gates::*;
 use logic_gates::Signal;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let bit1: FourBit = "0100".parse()?;
-    let bit2: FourBit = "0010".parse()?;
+    let bits1: FourBit = "0100".parse()?;
+    let bits2: FourBit = "0010".parse()?;
     let carry = Signal::Zero;
 
-    let (sum, car) = FourBitAdder::send_signal(&carry, &bit1, &bit2);
-    display(&bit1, &bit2, &sum, &car);
+    let (sum, car) = FourBitAdder::send_signal(&carry, &bits1, &bits2);
+    display(&bits1, &bits2, &sum, &car);
 
     Ok(())
 }
