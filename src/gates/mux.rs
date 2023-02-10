@@ -1,13 +1,15 @@
-use super::Nand;
+use super::And;
+use super::Not;
+use super::Or;
 use super::Signal;
 
 pub struct Mux;
 
 impl Mux {
     pub fn send_signal(sellect: &Signal, input1: &Signal, input2: &Signal) -> Signal {
-        Nand::send_signal(
-            &Nand::send_signal(input1, &Nand::send_signal(sellect, sellect)),
-            &Nand::send_signal(input2, sellect),
+        Or::send_signal(
+            &And::send_signal(&Not::send_signal(sellect), input1),
+            &And::send_signal(sellect, input2),
         )
     }
 }

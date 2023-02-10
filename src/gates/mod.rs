@@ -3,6 +3,7 @@ use super::Signal;
 
 mod adder;
 mod and;
+mod demux;
 mod fourbitadder;
 mod mux;
 mod nand;
@@ -12,6 +13,7 @@ mod or;
 mod xor;
 pub use adder::Adder;
 pub use and::And;
+pub use demux::Demux;
 pub use fourbitadder::FourBitAdder;
 pub use mux::Mux;
 pub use nand::Nand;
