@@ -61,26 +61,20 @@ fn display(bits1: &FourBit, bits2: &FourBit, sum: &FourBit, car: &Signal) {
         bits2.bit4,
         bits2.convert()
     );
+    
+    let mut output = sum.convert()
 
     if car == &Signal::One {
-        println!(
+        output += 16;
+    } 
+    println!(
             "Output  : {car}{}{}{}{} = {}",
             sum.bit1,
             sum.bit2,
             sum.bit3,
             sum.bit4,
-            sum.convert() + 16
+            output
         );
-    } else {
-        println!(
-            "Output  : {car}{}{}{}{} = {}",
-            sum.bit1,
-            sum.bit2,
-            sum.bit3,
-            sum.bit4,
-            sum.convert()
-        );
-    }
 }
 ```
 
