@@ -71,3 +71,53 @@ fn demux_gate() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+#[test]
+fn negative_test() -> Result<(), Box<dyn Error>> {
+    let n1: FourBit = "1001".parse()?;
+    assert_eq!(n1.convert_int(), -7);
+
+    Ok(())
+}
+
+#[test]
+fn reverse_bits() -> Result<(), Box<dyn Error>> {
+    let n1: FourBit = "1001".parse()?;
+    let n2: FourBit = "0110".parse()?;
+
+    assert_eq!(n1.reverse(), n2);
+
+    Ok(())
+}
+#[test]
+fn and3_test() -> Result<(), Box<dyn Error>> {
+    assert_eq!(
+        Signal::Zero,
+        And3::send_signal(&Signal::Zero, &Signal::One, &Signal::One)
+    );
+
+    Ok(())
+}
+
+#[test]
+fn mux4_test() -> Result<(), Box<dyn Error>> {
+    assert_eq!(
+        Signal::One,
+        Mux4::send_signal(
+            &Signal::Zero,
+            &Signal::Zero,
+            &Signal::One,
+            &Signal::Zero,
+            &Signal::Zero,
+            &Signal::One
+        )
+    );
+
+    Ok(())
+}
+#[test]
+fn alu1_test() -> Result<(), Box<dyn Error>> {
+    let a = Alu1::send_signal(&Signal::One, &Signal::Zero, &Signal::One, &Signal::Zero);
+    assert_eq!(a, Signal::Zero);
+
+    Ok(())
+}

@@ -10,10 +10,10 @@ pub struct FourBit {
 }
 
 impl FourBit {
-    pub fn convert(&self) -> i32 {
+    pub fn convert_int(&self) -> i32 {
         let mut number = 0;
         if self.bit1 == Signal::One {
-            number += 8;
+            number -= 8;
         }
         if self.bit2 == Signal::One {
             number += 4;
@@ -26,6 +26,14 @@ impl FourBit {
         }
 
         number
+    }
+    pub fn reverse(&self) -> Self {
+        Self {
+            bit1: self.bit1.reverse(),
+            bit2: self.bit2.reverse(),
+            bit3: self.bit3.reverse(),
+            bit4: self.bit4.reverse(),
+        }
     }
 }
 

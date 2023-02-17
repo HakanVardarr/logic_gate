@@ -9,6 +9,15 @@ pub enum Signal {
     Zero,
 }
 
+impl Signal {
+    fn reverse(&self) -> Self {
+        match self {
+            Self::One => Self::Zero,
+            Self::Zero => Self::One,
+        }
+    }
+}
+
 impl std::fmt::Display for Signal {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
