@@ -1,11 +1,9 @@
-use super::Not;
-use super::Or;
-use super::Signal;
+use super::{Not, Or, Signal};
 
 pub struct Nor;
 
 impl Nor {
-    pub fn send_signal(input1: &Signal, input2: &Signal) -> Signal {
-        Not::send_signal(&Or::send_signal(input1, input2))
+    pub fn send_signal(a: &Signal, b: &Signal) -> Signal {
+        Not::send_signal(&Or::send_signal(a, b))
     }
 }

@@ -1,5 +1,4 @@
-use super::{And, Not};
-use crate::Signal;
+use super::{And, Not, Signal};
 
 pub struct Demux;
 

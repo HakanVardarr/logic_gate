@@ -1,15 +1,12 @@
-use super::And;
-use super::Not;
-use super::Or;
-use super::Signal;
+use super::{And, Not, Or, Signal};
 
 pub struct Xor;
 
 impl Xor {
-    pub fn send_signal(input1: &Signal, input2: &Signal) -> Signal {
+    pub fn send_signal(a: &Signal, b: &Signal) -> Signal {
         Or::send_signal(
-            &And::send_signal(&Not::send_signal(input1), input2),
-            &And::send_signal(input1, &Not::send_signal(input2)),
+            &And::send_signal(a, &Not::send_signal(b)),
+            &And::send_signal(&Not::send_signal(a), b),
         )
     }
 }

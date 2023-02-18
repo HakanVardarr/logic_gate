@@ -6,7 +6,9 @@ Trying to simulate logic gates in rust programming language.
 
 - 4 bit adder (completed)
 - Change the project to a rust lib (completed)
-- Negative number support (uncompleted)
+- Negative number support (completed)
+- Substract (completed)
+- 1 Bit alu (completed)
 - 8 bit (uncompleted)
 - 8 bit adder (uncompleted)
 
@@ -38,7 +40,6 @@ fn main() -> Result<(), Box<dyn std::error::Error> {
 }
 ```
 
-
 In this example you can add two four bytes together. You need to send carry signal as `Signal::Zero` carry signal is usefull if you want to implement 8bit adder.
 
 If you want to display the added four bit you can implement a display function like this.
@@ -61,12 +62,12 @@ fn display(bits1: &FourBit, bits2: &FourBit, sum: &FourBit, car: &Signal) {
         bits2.bit4,
         bits2.convert()
     );
-    
+
     let mut output = sum.convert()
 
     if car == &Signal::One {
         output += 16;
-    } 
+    }
     println!(
             "Output  : {car}{}{}{}{} = {}",
             sum.bit1,
