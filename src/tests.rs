@@ -116,8 +116,15 @@ fn mux4_test() -> Result<(), Box<dyn Error>> {
 }
 #[test]
 fn alu_test() -> Result<(), Box<dyn Error>> {
-    let a = Alu::send_signal(&Signal::One, &Signal::Zero, &Signal::One, &Signal::Zero);
-    assert_eq!(a, Signal::Zero);
+    let a = Alu::send_signal(
+        &Signal::Zero,
+        &Signal::Zero,
+        &Signal::Zero,
+        &Signal::Zero,
+        &Signal::One,
+    );
+    assert_eq!(a.0, Signal::One);
+    assert_eq!(a.1, Signal::Zero);
 
     Ok(())
 }
@@ -129,6 +136,16 @@ fn substract_test() -> Result<(), Box<dyn Error>> {
     let (sum, _) = FourBitAdder::send_signal(&Signal::Zero, &Signal::One, &a, &b);
 
     assert_eq!("0001".parse::<FourBit>().unwrap(), sum);
+
+    Ok(())
+}
+#[test]
+fn alu4way_test() -> Result<(), Box<dyn Error>> {
+    let a: FourBit = "0111".parse()?;
+    let b: FourBit = "0110".parse()?;
+
+    let sum = Alu4Way::send_signal(&a, &b, &Signal::One, &Signal::Zero, &Signal::Zero);
+    assert_eq!("0110".parse::<FourBit>().unwrap(), sum);
 
     Ok(())
 }

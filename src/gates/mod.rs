@@ -3,6 +3,7 @@ use super::Signal;
 
 mod adder;
 mod alu;
+mod alu4way;
 mod and;
 mod and3way;
 mod demux;
@@ -16,6 +17,7 @@ mod or;
 mod xor;
 pub use adder::Adder;
 pub use alu::Alu;
+pub use alu4way::Alu4Way;
 pub use and::And;
 pub use and3way::And3Way;
 pub use demux::Demux;
