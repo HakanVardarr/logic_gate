@@ -9,6 +9,7 @@ Trying to simulate logic gates in rust programming language.
 - Negative number support (completed)
 - Substract (completed)
 - 1 Bit alu (completed)
+- 4 Bit alu (completed)
 - 8 bit (uncompleted)
 - 8 bit adder (uncompleted)
 
